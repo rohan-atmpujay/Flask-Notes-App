@@ -1,8 +1,8 @@
 from flask import Blueprint, render_template, request, url_for, redirect, flash
-from .models import User
 from werkzeug.security import generate_password_hash, check_password_hash
-from . import db
 from flask_login import login_user, logout_user, login_required, current_user
+from .models import User
+from . import db
 
 auth = Blueprint("auth", __name__)
 
@@ -44,14 +44,14 @@ def sign_up():
         user = User.query.filter_by(email=email).first()
         if user:
             flash('User already exists, please try another email.', category='error')
-        # elif password1 != password2:
-        #     flash("Passwords do not match!", category='error')
-        # elif len(email) < 4:
-        #     flash("Email must be greater than 3 characters.", category='error')
-        # elif len(first_name) < 2:
-        #     flash("First name must be greater than 1 character.", category='error')
-        # elif len(password1) < 7:
-        #     flash("Password must be greater than 6 characters.", category='error')
+        elif password1 != password2:
+            flash("Passwords do not match!", category='error')
+        elif len(email) < 4:
+            flash("Email must be greater than 3 characters.", category='error')
+        elif len(first_name) < 2:
+            flash("First name must be greater than 1 character.", category='error')
+        elif len(password1) < 7:
+            flash("Password must be greater than 6 characters.", category='error')
         else:
             new_user = User(
                 email=email,
