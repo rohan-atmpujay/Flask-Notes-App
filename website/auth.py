@@ -63,6 +63,6 @@ def sign_up():
             db.session.commit()
             login_user(new_user, remember=True)  # ✅ auto login after signup
             flash('Account created!', category='success')
-            return redirect(url_for("auth.login"))
+            return redirect(url_for("views.home"))
     
     return render_template("sign_up.html", user=current_user)
