@@ -41,7 +41,7 @@ def create_app():
     from .view import views
     from .auth import auth
     app.register_blueprint(views)
-    app.register_blueprint(auth, url_prefix="/auth")  # cleaner URL structure
+    app.register_blueprint(auth, url_prefix="/")  # cleaner URL structure
 
     # Create database if it doesn't exist
     create_database(app, db_path)
