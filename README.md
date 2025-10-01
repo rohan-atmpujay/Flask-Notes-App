@@ -1,4 +1,6 @@
 ﻿# Flask-Notes-App
+ 
+🚀 Live Demo: [Click here](https://flask-notes-app-1-n6jj.onrender.com)
 
 A simple Flask-based web application for managing personal notes with user authentication. Built with Python, Flask, SQLAlchemy, and Bootstrap, this app allows users to sign up, log in, add notes, and delete them dynamically.
 
@@ -35,3 +37,6 @@ Backend: Python, Flask, Flask-Login, Flask-SQLAlchemy
 Frontend: HTML, Jinja2 templates, Bootstrap, JavaScript (AJAX)
 
 Database: SQLite
+
+
+
